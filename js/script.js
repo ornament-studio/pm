@@ -66,8 +66,10 @@ function gotoSection(index, direction) {
   if (currentAudio) {
     setTimeout(() => {
       currentAudio.currentTime = 0;
-      currentAudio.muted = true;
-      currentAudio.play();
+      currentAudio.muted = false;
+      currentAudio
+        .play()
+        .catch(() => console.log("Автовідтворення заборонено браузером"));
     }, "600");
   }
 
@@ -92,6 +94,21 @@ Observer.create({
   tolerance: 10,
   preventDefault: true,
 });
+
+// Слухач кліку для розблокування відтворення аудіо
+document.addEventListener(
+  "click",
+  () => {
+    let audios = document.querySelectorAll("audio");
+    audios.forEach((audio) => {
+      audio.muted = false;
+      audio
+        .play()
+        .catch(() => console.log("Автовідтворення заборонено браузером"));
+    });
+  },
+  { once: true }
+);
 
 gotoSection(0, 1); // Запуск з першої секції
 
@@ -135,18 +152,12 @@ document.addEventListener("DOMContentLoaded", function () {
             // Показать сообщение об успешной отправке
             document.getElementById("successMessage").style.display = "block";
             document.getElementById("someErrorMessage").style.display = "none";
-            document.getElementById("limitErrorMessage").style.display = "none";
             document.getElementById("myForm").style.display = "none";
           })
           .catch((error) => {
             console.error("Ошибка:", error);
-            // необхідно в залежності від помилка далі виводити
-            // якщо номер вже приймав участь сьогодні
-            document.getElementById("limitErrorMessage").style.display =
-              "block";
-            // інша помилка серверу
+            //  в залежності від помилка далі виводити
             document.getElementById("someErrorMessage").style.display = "block";
-
             document.getElementById("successMessage").style.display = "none";
             document.getElementById("myForm").style.display = "none";
           });
