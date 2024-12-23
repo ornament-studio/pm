@@ -1,5 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+@font-face {
+  font-family: MADEOuterSans;
+  src: url(../font/MADEOuterSansMediumPERSONALUSE.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: MADEOuterSans;
+  src: url(../font/MADEOuterSansRegularPERSONALUSE.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 
 * {
   padding: 0;
@@ -29,14 +40,18 @@ a {
   text-decoration: none;
 }
 
+html {
+  font-size: calc(100vw / 1440 * 10);
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   color: white;
   background: black;
-  font-family: "Cormorant Garamond", serif;
-  text-transform: uppercase;
+  font-family: MADEOuterSans, serif;
+  font-weight: 400;
 }
 
 section {
@@ -45,6 +60,10 @@ section {
   top: 0;
   position: fixed;
   visibility: hidden;
+
+  &.black {
+    background-color: #000000;
+  }
 
   .outer,
   .inner {
@@ -76,6 +95,7 @@ section {
     }
     &.contain {
       background-color: #f2ff00;
+
       video {
         object-fit: contain;
       }
@@ -144,9 +164,10 @@ section {
 .popup__content {
   background: #f2ff01;
   position: relative;
-  padding: 2rem;
-  width: 100%;
-  max-width: 535px;
+  padding: 2rem 4rem 4rem 4rem;
+  width: 54rem;
+  max-width: 540px;
+  color: #000000;
 }
 .popup__close {
   position: absolute;
@@ -156,6 +177,7 @@ section {
   padding: 0;
   margin: 0;
   border: none;
+  cursor: pointer;
 }
 .popup__body {
 }
@@ -165,7 +187,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: MADE Outer Sans;
+  font-family: MADEOuterSans;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
@@ -175,14 +197,13 @@ section {
 }
 .popup__title {
   color: #000000;
-  font-family: MADE Outer Sans;
+  font-family: MADEOuterSans;
   font-size: 5.8rem;
   font-weight: 500;
   line-height: 8.7rem;
 }
 .popup__subtitle {
   font-size: 1.6rem;
-  font-weight: 400;
   line-height: 2.6rem;
   color: #000000;
   margin-top: 1rem;
@@ -194,31 +215,91 @@ section {
   margin-top: 4rem;
 }
 
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .input {
-  border: 1px solid #ffffff;
-  font-size: 1.8rem;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 2rem;
-  border-radius: 0.6rem;
-  padding: 2rem;
+  line-height: 24px;
+  padding-bottom: 2rem;
+  width: 100%;
   color: #fff;
+  background-color: transparent;
+  color: #000000;
+  text-transform: uppercase;
+  border-bottom: #000000 solid 2px;
+  outline: none;
+  font-family: MADEOuterSans;
+
+  &:focus {
+    background-color: transparent;
+  }
+  &:-internal-autofill-selected {
+    background-color: transparent;
+  }
+
+  &::placeholder {
+    font-family: MADEOuterSans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;
+    text-transform: uppercase;
+    background-color: transparent;
+  }
 }
 
 .popup__send {
   display: none;
 }
 .sent-modal__title {
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 5.9rem;
+  color: #000000;
+  font-family: MADEOuterSans;
+  font-size: 5.8rem;
+  font-weight: 500;
+  line-height: 5.3rem;
   text-align: center;
-  color: #93d15d;
+  text-transform: uppercase;
+  margin-top: 2rem;
 }
 .sent-modal__subtitle {
-  font-size: 2.4rem;
-  font-weight: 400;
-  line-height: 2.8rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: #000000;
+  margin-top: 2rem;
   text-align: center;
-  color: #fff;
-  margin-top: 1.5rem;
+
+}
+
+
+.logo {
+  width: auto;
+  height: 2vh;
+  min-height: 160px;
+
+  position: fixed;
+  z-index: 10;
+  top: 38px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  &.black {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7500%)
+      hue-rotate(89deg) brightness(105%) contrast(93%);
+  }
+
+  &.yellow {
+    filter: brightness(0) saturate(100%) invert(96%) sepia(48%) saturate(5696%)
+      hue-rotate(9deg) brightness(110%) contrast(104%);
+  }
+  svg {
+    width: 100%;
+    height: auto;
+  }
 }

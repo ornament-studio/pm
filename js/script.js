@@ -55,11 +55,19 @@ function gotoSection(index, direction) {
 
   // Відтворюємо відео в поточній секції
   let currentVideo = sections[index].querySelector("video");
-
   if (currentVideo) {
     setTimeout(() => {
       currentVideo.currentTime = 0;
       currentVideo.play();
+    }, "600");
+  }
+
+  let currentAudio = sections[index].querySelector("audio");
+  if (currentAudio) {
+    setTimeout(() => {
+      currentAudio.currentTime = 0;
+      currentAudio.muted = true;
+      currentAudio.play();
     }, "600");
   }
 
