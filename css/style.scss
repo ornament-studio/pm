@@ -94,7 +94,6 @@ section {
       height: 100%;
     }
     &.contain {
-
       video {
         object-fit: contain;
       }
@@ -121,8 +120,8 @@ section {
   z-index: 10;
   height: 4.23vh;
   width: auto;
-  display: none;
-  transition: display 0.5s ease-out;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 
   &.right {
     right: 30px;
@@ -130,18 +129,35 @@ section {
     transform: translate(0%, 0);
   }
 }
+.buttons {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  position: absolute;
+  bottom: 13.06vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  gap: 3rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
 
 .button {
-  position: absolute;
   background-color: #f2ff00;
-  width: 13.33vw;
   display: block;
-  aspect-ratio: 3.37/1.4;
   cursor: pointer;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, 16vw);
-  opacity: 0;
+  border: 2px solid #000000;
+  font-family: MADEOuterSans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+
+  text-transform: uppercase;
+  padding: 16px 0;
 }
 
 /* contact form pop-up */
@@ -164,7 +180,6 @@ section {
   background: #f2ff01;
   position: relative;
   padding: 2rem 4rem 4rem 4rem;
-  width: 54rem;
   max-width: 540px;
   color: #000000;
 }
@@ -210,8 +225,17 @@ section {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
   margin-top: 4rem;
+
+  p {
+    color: #000000;
+  }
+  a {
+    color: #000000;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
 
 input[type="email"],
@@ -273,9 +297,7 @@ textarea {
   color: #000000;
   margin-top: 2rem;
   text-align: center;
-
 }
-
 
 .logo {
   width: auto;

@@ -17,10 +17,7 @@
         <div class="outer">
             <div class="inner">
                 <div class="bg one">
-                    <audio autoplay>
-                        <source src="audio/audio1.mp3" type="audio/mpeg">
-                    </audio>
-                    <video autoplay muted loop src="video/stage1/Stage1.mp4"></video>
+                    <video autoplay muted loop src="video/stage1/Stage1FULL.mp4"></video>
                     <img class="scroll" src="img/icons/scroll.png" alt="scroll" data-delay="10000">
                 </div>
             </div>
@@ -31,9 +28,6 @@
         <div class="outer">
             <div class="inner">
                 <div class="bg top">
-                    <audio muted >
-                        <source src="audio/audio1.mp3" type="audio/mpeg">
-                    </audio>
                     <video muted src="video/stage2/step1.mp4"></video>
                     <img class="scroll" src="img/icons/scroll.png" alt="scroll" data-delay="2500">
                 </div>
@@ -131,6 +125,7 @@
                                 fill="black" />
                         </svg>
                     </div>
+                    <img class="scroll" src="img/icons/scroll.png" alt="scroll" data-delay="8000">
                     <video muted loop src="video/stage5/step1.mp4"></video>
                 </div>
             </div>
@@ -141,7 +136,10 @@
             <div class="inner">
                 <div class="bg">
                     <video muted src="video/stage5/step2.mp4"></video>
-                    <button class="button" id="openPopup">contact us</button>
+                    <div class="buttons">
+                        <button class="button" id="openPopup">contact us</button>
+                        <a target="_blank" class="button" href="">join the team</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,13 +156,19 @@
                     </svg>
                 </button>
                 <div class="popup__body" id="myForm">
-                    <p class="popup__title">Form</p>
+                    <p class="popup__title">Let's connect </p>
                     <p class="popup__subtitle">Leave your email and we will contact you.</p>
                     <form class="form" action="#" method="POST" id="supportForm">
                         <div class="form__item">
                             <input id="userEmail" type="email" name="userEmail" placeholder="email" class="input">
                         </div>
+                        <div class="form__item">
+                            <div class="g-recaptcha" data-sitekey="__Site_key__"></div>
+                        </div>
                         <button type="submit" class="form__button btn" aria-label="submit form button">Submit</button>
+                        <p>For more information about how we handle your data, please refer to our <a target="_blank"
+                                href="">Privacy Policy</a>.
+                        </p>
                     </form>
                 </div>
                 <div class="popup__send" id="successMessage">
@@ -182,7 +186,7 @@
             </div>
         </div>
     </div>
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
     <script src="js/script.js"></script>

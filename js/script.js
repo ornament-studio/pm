@@ -78,8 +78,15 @@ function gotoSection(index, direction) {
   if (scrollBtn) {
     let delay = parseInt(scrollBtn.getAttribute("data-delay")) || 5000;
     setTimeout(() => {
-      scrollBtn.style.display = "block";
+      scrollBtn.style.opacity = "1";
     }, delay);
+  }
+
+  let buttons = sections[index].querySelector(".buttons");
+  if (buttons) {
+    setTimeout(() => {
+      buttons.style.opacity = "1";
+    }, "2000");
   }
 
   currentIndex = index;
