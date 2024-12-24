@@ -54,6 +54,11 @@ body {
   font-weight: 400;
 }
 
+picture img {
+  width: 100%;
+  height: auto;
+}
+
 section {
   height: 100%;
   width: 100%;
@@ -334,10 +339,29 @@ textarea {
 
 /* Iphone 5 */
 @media (max-width: 600px) {
+  html {
+    font-size: 2.7777777778vw;
+  }
   .pc {
     display: none;
   }
   .mobile {
     display: inherit;
+  }
+  .buttons {
+    grid-template-columns: 100%;
+    width: 80%;
+    bottom: 13.06vh;
+    gap: 1.5rem;
+  }
+  .scroll {
+    bottom: 30px;
+    height: auto;
+    width: 61px;
+  }
+  .logo {
+    width: 181px;
+    height: auto;
+    top: 25px;
   }
 }/*# sourceMappingURL=style.css.map */
