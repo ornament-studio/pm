@@ -329,14 +329,6 @@ textarea {
   height: auto;
 }
 
-.mobile {
-  display: none;
-}
-
-.pc {
-  display: inherit;
-}
-
 /* Iphone 5 */
 @media (max-width: 600px) {
   html {
@@ -355,7 +347,7 @@ textarea {
     gap: 1.5rem;
   }
   .scroll {
-    bottom: 30px;
+    bottom: 15px;
     height: auto;
     width: 61px;
   }
@@ -363,5 +355,50 @@ textarea {
     width: 181px;
     height: auto;
     top: 25px;
+  }
+  /* contact form pop-up */
+  .popup {
+    padding: 2rem;
+  }
+  .popup__content {
+    padding: 2rem;
+  }
+  .popup__close {
+    top: 0.8rem;
+    right: 0.8rem;
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+  .popup__title {
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+  .popup__subtitle {
+    font-size: 13px;
+    line-height: 2.6rem;
+  }
+  .form {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .input {
+    padding-bottom: 1.5rem;
+  }
+  .sent-modal__title {
+    color: #000000;
+    font-family: MADEOuterSans;
+    font-size: 5.8rem;
+    font-weight: 500;
+    line-height: 5.3rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2rem;
+  }
+  .sent-modal__subtitle {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: #000000;
+    margin-top: 2rem;
+    text-align: center;
   }
 }/*# sourceMappingURL=style.css.map */
