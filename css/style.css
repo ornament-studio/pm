@@ -322,4 +322,22 @@ textarea {
 .logo svg {
   width: 100%;
   height: auto;
+}
+
+.mobile {
+  display: none;
+}
+
+.pc {
+  display: inherit;
+}
+
+/* Iphone 5 */
+@media (max-width: 600px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: inherit;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -56,10 +56,25 @@ function gotoSection(index, direction) {
   // Відтворюємо відео в поточній секції
   let currentVideo = sections[index].querySelector("video");
   if (currentVideo) {
+    // Перевіряємо, чи користувач на мобільному пристрої (наприклад, ширина екрану менше 768px)
+    if (window.innerWidth <= 768) {
+      // Отримуємо поточний src відео
+      let currentSrc = currentVideo.getAttribute("src");
+      // Додаємо "mobile/" після "video/"
+      if (
+        currentSrc &&
+        currentSrc.includes("video/") &&
+        !currentSrc.includes("video/mobile/")
+      ) {
+        let updatedSrc = currentSrc.replace("video/", "video/mobile/");
+        currentVideo.setAttribute("src", updatedSrc);
+      }
+    }
+    // Перезавантажуємо відео та відтворюємо його
     setTimeout(() => {
       currentVideo.currentTime = 0;
       currentVideo.play();
-    }, "600");
+    }, 600);
   }
 
   let currentAudio = sections[index].querySelector("audio");

@@ -324,3 +324,19 @@ textarea {
     height: auto;
   }
 }
+
+.mobile {
+  display: none;
+}
+.pc {
+  display: inherit;
+}
+/* Iphone 5 */
+@media (max-width: 600px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: inherit;
+  }
+}
