@@ -101,7 +101,7 @@ function gotoSection(index, direction) {
   if (buttons) {
     setTimeout(() => {
       buttons.style.opacity = "1";
-    }, "2000");
+    }, "2500");
   }
 
   currentIndex = index;

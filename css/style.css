@@ -123,6 +123,10 @@ section .bg.top video {
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
+.scroll img {
+  width: 100%;
+  height: auto;
+}
 .scroll.right {
   right: 30px;
   left: inherit;
@@ -259,6 +263,7 @@ textarea {
   border-bottom: #000000 solid 2px;
   outline: none;
   font-family: MADEOuterSans;
+  border-radius: 0px;
 }
 .input:focus {
   background-color: transparent;
@@ -322,7 +327,7 @@ textarea {
   filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7500%) hue-rotate(89deg) brightness(105%) contrast(93%);
 }
 .logo.yellow {
-  filter: brightness(0) saturate(100%) invert(96%) sepia(48%) saturate(5696%) hue-rotate(9deg) brightness(110%) contrast(104%);
+  filter: brightness(0) saturate(100%) invert(94%) sepia(38%) saturate(5698%) hue-rotate(6deg) brightness(104%) contrast(103%);
 }
 .logo svg {
   width: 100%;
