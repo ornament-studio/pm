@@ -67,9 +67,11 @@ section {
   top: 0;
   position: fixed;
   visibility: hidden;
+  background-color: transparent;
+  transition: opacity ease-out 1s;
 
   &.black {
-    background-color: #000000;
+    background-color: transparent;
   }
 
   .outer,

@@ -11,8 +11,8 @@ let sections = document.querySelectorAll("section"),
   wrap = gsap.utils.wrap(0, sections.length),
   animating;
 
-gsap.set(outerWrappers, { yPercent: 100 });
-gsap.set(innerWrappers, { yPercent: -100 });
+// gsap.set(outerWrappers, { yPercent: 100 });
+// gsap.set(innerWrappers, { yPercent: -100 });
 
 function gotoSection(index, direction) {
   // Перевіряємо, чи індекс знаходиться в межах
@@ -33,30 +33,53 @@ function gotoSection(index, direction) {
   if (currentIndex >= 0) {
     // Якщо це не перший запуск, приховуємо попередню секцію та зображення
     gsap.set(sections[currentIndex], { zIndex: 0 });
-    tl.to(images[currentIndex], { yPercent: -15 * dFactor }).set(
+    tl.to(images[currentIndex], { yPercent: 0 * dFactor }).set(
       sections[currentIndex],
       { autoAlpha: 0 }
     );
 
-    // Якщо є відео в попередній секції, ставимо його на паузу
+    // Приховати кнопку скролу у поточній секції
+    let buttons = sections[index].querySelector(".buttons");
+    if (buttons) {
+      buttons.style.opacity = "0";
+    }
+
+    // Приховати кнопку скролу у поточній секції
+    let scrollBtn = sections[index].querySelector(".scroll");
+    if (scrollBtn) {
+      scrollBtn.style.opacity = "0";
+    }
+
+    // Якщо є відео в попередній секції, зупиняємо його та на початок
     let prevVideo = sections[currentIndex].querySelector("video");
     if (prevVideo) {
-      prevVideo.pause();
+      setTimeout(() => {
+        prevVideo.load();
+      }, 1000);
     }
   }
+
+  // Змінюємо прозорість секцій
+  sections.forEach((section, i) => {
+    if (i === index) {
+      gsap.to(section, { opacity: 1, duration: 0.5 }); // Поточна секція
+    } else {
+      gsap.to(section, { opacity: 0, duration: 0.5 }); // Інші секції
+    }
+  });
 
   // Показуємо поточну секцію та зображення
   gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
   tl.fromTo(
     [outerWrappers[index], innerWrappers[index]],
     {
-      yPercent: (i) => (i ? -100 * dFactor : 100 * dFactor),
+      yPercent: (i) => (i ? 0 * dFactor : 0 * dFactor),
     },
     {
       yPercent: 0,
     },
     0
-  ).fromTo(images[index], { yPercent: 15 * dFactor }, { yPercent: 0 }, 0);
+  ).fromTo(images[index], { yPercent: 0 * dFactor }, { yPercent: 0 }, 0);
 
   // Відтворюємо відео в поточній секції
   let currentVideo = sections[index].querySelector("video");
