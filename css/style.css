@@ -327,7 +327,7 @@ textarea {
   filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7500%) hue-rotate(89deg) brightness(105%) contrast(93%);
 }
 .logo.yellow {
-  filter: brightness(0) saturate(100%) invert(94%) sepia(38%) saturate(5698%) hue-rotate(6deg) brightness(104%) contrast(103%);
+  filter: brightness(0) saturate(100%) invert(86%) sepia(57%) saturate(469%) hue-rotate(16deg) brightness(112%) contrast(107%);
 }
 .logo svg {
   width: 100%;

@@ -15,13 +15,18 @@ gsap.set(outerWrappers, { yPercent: 100 });
 gsap.set(innerWrappers, { yPercent: -100 });
 
 function gotoSection(index, direction) {
+  // Перевіряємо, чи індекс знаходиться в межах
+  if (index < 0 || index >= sections.length) {
+    return; // Якщо поза межами, нічого не робимо
+  }
+
   index = wrap(index); // Перевіряємо, чи індекс є допустимим
   animating = true;
 
   let fromTop = direction === -1,
     dFactor = fromTop ? -1 : 1,
     tl = gsap.timeline({
-      defaults: { duration: 1, ease: "power1.inOut" },
+      defaults: { duration: 1.25, ease: "power1.inOut" },
       onComplete: () => (animating = false),
     });
 
