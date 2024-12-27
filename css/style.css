@@ -66,7 +66,7 @@ section {
   position: fixed;
   visibility: hidden;
   background-color: transparent;
-  transition: opacity ease-out 1s;
+  transition: opacity ease-out 0.5s;
 }
 section.black {
   background-color: transparent;
@@ -338,6 +338,11 @@ textarea {
 
 /* Iphone 5 */
 @media (max-width: 600px) {
+  body {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
   html {
     font-size: 2.7777777778vw;
   }
