@@ -152,7 +152,7 @@ section {
   transform: translate(-50%, 0);
   gap: 3rem;
   opacity: 0;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
 .button {
@@ -227,7 +227,7 @@ section {
   color: #000000;
   font-family: MADEOuterSans;
   font-size: 5.8rem;
-  
+
   font-weight: 500;
   line-height: 8.7rem;
 }
@@ -428,5 +428,36 @@ textarea {
     color: #000000;
     margin-top: 2rem;
     text-align: center;
+  }
+}
+
+@media (min-width: 1500px) {
+  .popup__title {
+    font-size: 58px;
+    line-height: 1.2;
+  }
+
+  .popup__content {
+    padding: 20px 40px 40px;
+  }
+
+  .popup__subtitle {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .form {
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .sent-modal__title {
+    font-size: 58px;
+    line-height: 1.2;
+    margin-top: 20px;
+  }
+  .sent-modal__subtitle {
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 20px;
   }
 }

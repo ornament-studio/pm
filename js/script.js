@@ -129,7 +129,7 @@ function gotoSection(index, direction) {
   if (buttons) {
     setTimeout(() => {
       buttons.style.opacity = "1";
-    }, "2500");
+    }, "1500");
   }
 
   currentIndex = index;
